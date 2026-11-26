@@ -1,17 +1,28 @@
-# darna_app
+# Darna – Smart Household Management Application
 
-A new Flutter project.
+Darna is a Flutter mobile application designed to help Algerian households organize their daily responsibilities, manage recurring bills and expenses, and coordinate tasks between family members.
+
+## Project Overview
+
+The application aims to simplify household management through a shared space where members can organize financial responsibilities and everyday tasks.
+
+## Technologies
+
+- Flutter
+- Dart
+- Supabase
+- PostgreSQL
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+This project is built with Flutter.
 
-A few resources to get you started if this is your first Flutter project:
+To learn more about Flutter development, check out:
 
 - [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
 - [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+- [Flutter documentation](https://docs.flutter.dev/)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Project Status
+
+Currently under development.
