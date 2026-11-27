@@ -60,11 +60,34 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
             child: Stack(
               clipBehavior: Clip.hardEdge,
               children: [
+                // Emerald recovery halo
+                Positioned(
+                  right: -42,
+                  top: 42,
+                  width: 254,
+                  height: 236,
+                  child: SvgPicture.asset(
+                    'assets/icons/recovery_emerald_halo.svg',
+                    fit: BoxFit.contain,
+                  ),
+                ),
+                // Lavender corner bubble
+                Positioned(
+                  left: 219,
+                  top: 134,
+                  width: 80,
+                  height: 80,
+                  child: SvgPicture.asset(
+                    'assets/icons/recovery_lavender_bubble.svg',
+                    fit: BoxFit.contain,
+                  ),
+                ),
+                // 3D artwork
                 Positioned(
                   right: -10,
-                  top: 10,
-                  width: 240,
-                  height: 240,
+                  top: 0,
+                  width: 260,
+                  height: 260,
                   child: Image.asset(
                     'assets/images/auth_recovery_3d.png',
                     fit: BoxFit.contain,

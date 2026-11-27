@@ -62,7 +62,11 @@ flutter:
   assets:
     - assets/icons/
     - assets/images/
-
+    - assets/images/welcome/
+    - assets/images/home/
+    - assets/images/all_bills/
+    - assets/images/todo_list/
+    - assets/images/salary/
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg

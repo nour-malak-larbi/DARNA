@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'core/theme/darna_colors.dart';
 import 'core/theme/darna_theme.dart';
+import 'core/user/darna_user.dart';
+import 'screens/app_shell.dart';
 import 'screens/auth/auth_screens.dart';
 import 'widgets/widgets.dart';
 
@@ -13,6 +15,7 @@ enum _AppRoute {
   login,
   register,
   forgotPassword,
+  home,
   showcase,
 }
 
@@ -25,6 +28,7 @@ class DarnaApp extends StatefulWidget {
 
 class _DarnaAppState extends State<DarnaApp> {
   _AppRoute _route = _AppRoute.welcome;
+  DarnaUser? _user;
 
   @override
   Widget build(BuildContext context) {
@@ -42,20 +46,33 @@ class _DarnaAppState extends State<DarnaApp> {
             onForgotPassword: () =>
                 setState(() => _route = _AppRoute.forgotPassword),
             onCreateAccount: () => setState(() => _route = _AppRoute.register),
-            onLoginSubmit: (_, _) =>
-                setState(() => _route = _AppRoute.showcase),
+            onLoginSubmit: (email, _) {
+              setState(() {
+                _user = DarnaUser(
+                  name: 'Maya Larbi',
+                  email: email,
+                  phone: '+213 555 0148',
+                );
+                _route = _AppRoute.home;
+              });
+            },
           ),
         _AppRoute.register => RegistrationScreen(
             onBack: () => setState(() => _route = _AppRoute.welcome),
             onLoginTap: () => setState(() => _route = _AppRoute.login),
-            onCreateAccount: (_, _, _) =>
-                setState(() => _route = _AppRoute.showcase),
+            onCreateAccount: (name, email, _) {
+              setState(() {
+                _user = DarnaUser(name: name, email: email);
+                _route = _AppRoute.home;
+              });
+            },
           ),
         _AppRoute.forgotPassword => ForgotPasswordScreen(
             onBack: () => setState(() => _route = _AppRoute.login),
             onBackToLogin: () => setState(() => _route = _AppRoute.login),
             onSendReset: (_) {},
           ),
+        _AppRoute.home => AppShell(user: _user),
         _AppRoute.showcase => const DarnaUiKitShowcase(),
       },
     );
